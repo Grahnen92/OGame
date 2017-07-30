@@ -1,36 +1,179 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Vulkan">
+      <UniqueIdentifier>{573bca07-c846-4af3-96f0-a627c515b122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vulkan\headers">
+      <UniqueIdentifier>{632c86f0-ea26-4682-85ea-0ef9d4d6fbaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vulkan\source">
+      <UniqueIdentifier>{0d41f0ba-f084-4668-9392-c74051d1ca53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OGame">
+      <UniqueIdentifier>{8ee7d65b-94cd-4741-b18b-9b8cfb7c22e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{862520df-70e2-41c7-b818-592be4755f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ObjectFramework">
+      <UniqueIdentifier>{77fa4fde-0d98-4b87-a2dd-7af9169cbc69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Mesh">
+      <UniqueIdentifier>{47dcdb11-b4c6-4788-bac3-d71a6996c5d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="VkRenderTask.cpp">
+      <Filter>Vulkan\source</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="VkRenderGroup.cpp">
+      <Filter>Vulkan\source</Filter>
     </ClCompile>
     <ClCompile Include="VulkanRenderer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Vulkan\source</Filter>
     </ClCompile>
+    <ClCompile Include="SpaceshipFighter.cpp">
+      <Filter>OGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicalObject.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="PresentObject.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialObject.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualObject.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialObject.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SILevelOne.cpp">
+      <Filter>OGame</Filter>
+    </ClCompile>
+    <ClCompile Include="OGameInstance.cpp">
+      <Filter>OGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Engine\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMesh.cpp">
+      <Filter>Engine\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneMesh.cpp">
+      <Filter>Engine\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="VkRenderTask.h">
+      <Filter>Vulkan\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VkRenderGroup.h">
+      <Filter>Vulkan\headers</Filter>
     </ClInclude>
     <ClInclude Include="VulkanRenderer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Vulkan\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceshipFighter.h">
+      <Filter>OGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialObject.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalObject.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="PresentObject.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialObject.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualObject.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SILevelOne.h">
+      <Filter>OGame</Filter>
+    </ClInclude>
+    <ClInclude Include="OGameInstance.h">
+      <Filter>OGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Engine\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMesh.h">
+      <Filter>Engine\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneMesh.h">
+      <Filter>Engine\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInstance.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

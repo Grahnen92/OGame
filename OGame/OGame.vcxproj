@@ -75,16 +75,16 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\includes;..\includes\GLFW;..\includes\glm;C:\VulkanSDK\1.0.54.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\VulkanSDK\1.0.54.0\Lib;..\libs\GLFW\lib-vc2015;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\includes;..\includes\GLFW;..\includes\glm;C:\VulkanSDK\1.0.54.0\Include;..\includes\Box2D;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.0.54.0\Lib;..\libs\GLFW\lib-vc2015;..\libs\Box2D\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\includes;..\includes\GLFW;..\includes\glm;C:\VulkanSDK\1.0.54.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\VulkanSDK\1.0.54.0\Lib;..\libs\GLFW\lib-vc2015;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\includes;..\includes\GLFW;..\includes\glm;C:\VulkanSDK\1.0.54.0\Include;..\includes\Box2D;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.0.54.0\Lib;..\libs\GLFW\lib-vc2015;..\libs\Box2D\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,7 +109,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>C:\VulkanSDK\1.0.54.0\Lib;..\libs\GLFW\lib-vc2015</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -143,16 +143,60 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\VulkanSDK\1.0.54.0\Lib;..\libs\GLFW\lib-vc2015</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameInstance.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MaterialObject.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="OGameInstance.cpp" />
+    <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="PhysicalObject.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="PlaneMesh.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerController.cpp" />
+    <ClCompile Include="PresentObject.cpp" />
+    <ClCompile Include="SILevelOne.cpp" />
+    <ClCompile Include="SpaceshipFighter.cpp" />
+    <ClCompile Include="SpatialObject.cpp" />
+    <ClCompile Include="StaticMesh.cpp" />
+    <ClCompile Include="VisualObject.cpp" />
+    <ClCompile Include="VkRenderTask.cpp" />
+    <ClCompile Include="VkRenderGroup.cpp" />
     <ClCompile Include="VulkanRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameInstance.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="MaterialObject.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="OGameInstance.h" />
+    <ClInclude Include="Pawn.h" />
+    <ClInclude Include="PhysicalObject.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="PlaneMesh.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerController.h" />
+    <ClInclude Include="PresentObject.h" />
+    <ClInclude Include="SILevelOne.h" />
+    <ClInclude Include="SpaceshipFighter.h" />
+    <ClInclude Include="SpatialObject.h" />
+    <ClInclude Include="StaticMesh.h" />
+    <ClInclude Include="VisualObject.h" />
+    <ClInclude Include="VkRenderTask.h" />
+    <ClInclude Include="VkRenderGroup.h" />
     <ClInclude Include="VulkanRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
