@@ -3,37 +3,41 @@
 #ifndef PAWN_H
 #define PAWN_H
 
-#include "InputComponent.h"
-#include "MaterialObject.h"
-#include "VisualObject.h"
-#include <GLFW/glfw3.h>
+#include "Actor.h"
+
+class PlayerController;
+class InputComponent;
+
+namespace OG {
+	class Pawn : public Actor
+	{
+
+		friend PlayerController;
+
+	public:
+		
+		Pawn(GameInstance* _gi);
+
+		virtual ~Pawn();
 
 
 
-class Pawn : public MaterialObject
-{
+		PlayerController* getOwningPlayer() { return owning_player; }
 
-	friend class PlayerController;
+	protected:
+		Pawn();
+		void becomeHost(PlayerController* _player);
 
-public:
-	Pawn();
+		void createPlayerInputComponent();
+		virtual void SetupPlayerInputComponent() = 0;
+		void destroyPlayerInputComponent() { delete input_component; }
 
-	virtual ~Pawn();
+		PlayerController* owning_player = nullptr;
+		InputComponent* input_component = nullptr;
 
-	
+		virtual void update(float delta_time);
+	};
 
-	class PlayerController* getOwningPlayer() { return owning_player; }
-
-protected:
-
-	void becomeHost(class PlayerController* _player);
-
-	void createPlayerInputComponent() { input_component = new InputComponent; }
-	virtual void SetupPlayerInputComponent() = 0;
-	void destroyPlayerInputComponent() { delete input_component; }
-
-	class PlayerController* owning_player = nullptr;
-	class InputComponent* input_component = nullptr;
-};
+}
 
 #endif

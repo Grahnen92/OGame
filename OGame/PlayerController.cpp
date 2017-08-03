@@ -2,6 +2,8 @@
 #include <iostream>
 #include <algorithm>
 #include "Pawn.h"
+#include "InputComponent.h"
+
 
 
 PlayerController::PlayerController()
@@ -38,13 +40,13 @@ void PlayerController::keyboardCallback(GLFWwindow* window, int key, int scancod
 
 }
 
-void  PlayerController::Possess( Pawn* _pawn)
+void  PlayerController::Possess(OG::Pawn* _pawn)
 {
 	controlled_pawns.push_back(_pawn);
 	_pawn->becomeHost(this);
 }
 
-bool  PlayerController::removePawn( Pawn* _pawn) {
+bool  PlayerController::removePawn( OG::Pawn* _pawn) {
 	if (controlled_pawns.erase(std::remove(controlled_pawns.begin(), controlled_pawns.end(), _pawn)) != controlled_pawns.end())
 		return true;
 	else

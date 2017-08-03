@@ -1,4 +1,9 @@
 #pragma once
+#ifndef GAMEINSTANCE_H
+#define GAMEINSTANCE_H
+
+
+
 #include "GameInstance.h"
 class OGameInstance : public GameInstance
 {
@@ -15,3 +20,4 @@ protected:
 private:
 };
 
+#endif // !1

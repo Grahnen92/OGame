@@ -26,6 +26,15 @@
     <Filter Include="Engine\Mesh">
       <UniqueIdentifier>{47dcdb11-b4c6-4788-bac3-d71a6996c5d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\ObjectFramework\components">
+      <UniqueIdentifier>{364d2c32-0be2-4624-922e-49b9a3da8177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Player">
+      <UniqueIdentifier>{3a8f97f0-3161-44a7-9d9a-011267e796f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\world">
+      <UniqueIdentifier>{ffd91599-4bd0-44b8-bdac-ffb77f9b7b80}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VkRenderTask.cpp">
@@ -37,48 +46,6 @@
     <ClCompile Include="VulkanRenderer.cpp">
       <Filter>Vulkan\source</Filter>
     </ClCompile>
-    <ClCompile Include="SpaceshipFighter.cpp">
-      <Filter>OGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicalObject.cpp">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="PresentObject.cpp">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="SpatialObject.cpp">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="VisualObject.cpp">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="MaterialObject.cpp">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="InputComponent.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Pawn.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerController.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="SILevelOne.cpp">
-      <Filter>OGame</Filter>
-    </ClCompile>
-    <ClCompile Include="OGameInstance.cpp">
-      <Filter>OGame</Filter>
-    </ClCompile>
     <ClCompile Include="Mesh.cpp">
       <Filter>Engine\Mesh</Filter>
     </ClCompile>
@@ -88,19 +55,67 @@
     <ClCompile Include="PlaneMesh.cpp">
       <Filter>Engine\Mesh</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Camera.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Engine\world</Filter>
     </ClCompile>
     <ClCompile Include="GameInstance.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Engine\world</Filter>
     </ClCompile>
     <ClCompile Include="Level.cpp">
-      <Filter>Engine</Filter>
+      <Filter>Engine\world</Filter>
     </ClCompile>
-    <ClCompile Include="Plane.cpp">
-      <Filter>Engine</Filter>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Engine\Player</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp">
+      <Filter>Engine\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Engine\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorComponent.cpp">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshComponent.cpp">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicalComponent.cpp">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClCompile>
+    <ClCompile Include="SpatialComponent.cpp">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshComponent.cpp">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshActor.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClCompile>
+    <ClCompile Include="OGameInstance.cpp">
+      <Filter>OGame</Filter>
+    </ClCompile>
+    <ClCompile Include="SILevelOne.cpp">
+      <Filter>OGame</Filter>
+    </ClCompile>
+    <ClCompile Include="SpaceshipFighter.cpp">
+      <Filter>OGame</Filter>
+    </ClCompile>
+    <ClCompile Include="b2RayCastCallbackHit.cpp" />
+    <ClCompile Include="b2RayCastCallbackClosestHit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VkRenderTask.h">
@@ -112,48 +127,6 @@
     <ClInclude Include="VulkanRenderer.h">
       <Filter>Vulkan\headers</Filter>
     </ClInclude>
-    <ClInclude Include="SpaceshipFighter.h">
-      <Filter>OGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="MaterialObject.h">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicalObject.h">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="PresentObject.h">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="SpatialObject.h">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="VisualObject.h">
-      <Filter>Engine\ObjectFramework</Filter>
-    </ClInclude>
-    <ClInclude Include="InputComponent.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerController.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Pawn.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="SILevelOne.h">
-      <Filter>OGame</Filter>
-    </ClInclude>
-    <ClInclude Include="OGameInstance.h">
-      <Filter>OGame</Filter>
-    </ClInclude>
     <ClInclude Include="Mesh.h">
       <Filter>Engine\Mesh</Filter>
     </ClInclude>
@@ -163,17 +136,65 @@
     <ClInclude Include="PlaneMesh.h">
       <Filter>Engine\Mesh</Filter>
     </ClInclude>
+    <ClInclude Include="Plane.h" />
     <ClInclude Include="Camera.h">
-      <Filter>Engine</Filter>
+      <Filter>Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Engine\world</Filter>
     </ClInclude>
     <ClInclude Include="GameInstance.h">
-      <Filter>Engine</Filter>
+      <Filter>Engine\world</Filter>
     </ClInclude>
     <ClInclude Include="Level.h">
-      <Filter>Engine</Filter>
+      <Filter>Engine\world</Filter>
     </ClInclude>
-    <ClInclude Include="Plane.h">
-      <Filter>Engine</Filter>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Engine\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Engine\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Engine\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorComponent.h">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshComponent.h">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalComponent.h">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClInclude>
+    <ClInclude Include="SpatialComponent.h">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshComponent.h">
+      <Filter>Engine\ObjectFramework\components</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshActor.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Engine\ObjectFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="OGameInstance.h">
+      <Filter>OGame</Filter>
+    </ClInclude>
+    <ClInclude Include="SILevelOne.h">
+      <Filter>OGame</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceshipFighter.h">
+      <Filter>OGame</Filter>
+    </ClInclude>
+    <ClInclude Include="b2RayCastCallbackHit.h" />
+    <ClInclude Include="b2RayCastCallbackClosestHit.h" />
   </ItemGroup>
 </Project>

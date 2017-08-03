@@ -1,5 +1,6 @@
 #include "OGameInstance.h"
 #include "SILevelOne.h"
+#include "PlaneMesh.h"
 
 
 OGameInstance::OGameInstance()
@@ -24,6 +25,10 @@ void OGameInstance::createGame()
 }
 void OGameInstance::createLevels()
 {
+	PlaneMesh* plane_mesh = new PlaneMesh(glm::vec2(1.f, 1.f), getRenderer());
+	addStaticMesh(plane_mesh); //0
 	level = new SILevelOne(this);
+	level->setupLevel();
+	level->initLevel();
 
 }

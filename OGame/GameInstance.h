@@ -1,21 +1,29 @@
 #pragma once
-
-
 #include <vector>
+
+class VulkanRenderer;
+class GameState;
+class Level;
+class Player;
+class StaticMesh;
 
 class GameInstance
 {
+
+	friend class Level;
 public:
 	GameInstance();
-	~GameInstance();
+	virtual ~GameInstance() = 0;
 
-	class VulkanRenderer* getRenderer();
+	VulkanRenderer* getRenderer();
 
-	class GameState* getGameState();
+	GameState* getGameState();
 
-	class Level* getLevel();
+	Level* getLevel();
 
-	class Player* getPlayer(int _player_index);
+	Player* getPlayer(int _player_index);
+
+	StaticMesh* getStaticMesh(int _adress);
 
 protected:
 
@@ -26,20 +34,28 @@ protected:
 	void createGameState();
 	void createPlayer();
 
+	void loadStaticMesh(std::string _file);
+	void addStaticMesh(StaticMesh* _mesh);
+
 	void initGame();
 	void mainLoop();
 
-	class VulkanRenderer* renderer;
+	void updateSceneGraph();
 
-	std::vector<class Player*> players;
+	VulkanRenderer* renderer = nullptr;
 
-	class GameState* game_state;
+	std::vector<Player*> players;
 
-	class Level* level;
+	GameState* game_state = nullptr;
 
+	Level* level = nullptr;
+
+	std::vector<StaticMesh*> static_meshes;
 	
 
 private:
+
+	bool sg_needs_update = false;
 
 	void runGame();
 	void cleanup();

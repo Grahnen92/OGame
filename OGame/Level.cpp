@@ -1,7 +1,10 @@
 #include "Level.h"
-#include "MaterialObject.h"
 #include "GameInstance.h"
+#include "ActorComponent.h"
+#include "Actor.h"
+#include "Box2D.h"
 
+#include <iostream>
 
 Level::Level() : physics_environment(nullptr), game_instance(nullptr)
 {
@@ -14,80 +17,72 @@ Level::Level( GameInstance* _game_instance) : physics_environment(nullptr), game
 
 Level::~Level()
 {
-	for (int i = 0; i < immaterial_entities.size(); i++)
-		delete immaterial_entities[i];
+	for (int i = 0; i < dynamic_components.size(); i++)
+		delete dynamic_components[i];
 
-	for (int i = 0; i < dynamic_entities.size(); i++)
-		delete dynamic_entities[i];
-
-	for (int i = 0; i < static_entities.size(); i++)
-		delete static_entities[i];
-
-	for (int i = 0; i < static_meshes.size(); i++)
-		delete static_meshes[i];
-
+	for (int i = 0; i < static_components.size(); i++)
+		delete static_components[i];
 }
 
-std::vector<Entity*>* Level::getImmaterialEntities()
+void Level::markComponentForRegistration(OG::ActorComponent* _component)
 {
-	return &immaterial_entities;
-}
-std::vector<MaterialObject*>* Level::getDynamicEntities()
-{
-	return &dynamic_entities;
-}
-std::vector<VisualObject*>* Level::getStaticEntities()
-{
-	return &static_entities;
+	components_to_initialize.push_back(_component);
 }
 
-void Level::addEntity( Entity* _entity)
+void Level::markComponentAsDynamic(OG::ActorComponent* _component) {
+	dynamic_components.push_back(_component);
+}
+void Level::markComponentAsStatic(OG::ActorComponent* _component)
 {
-	MaterialObject* m_obj = dynamic_cast<MaterialObject*>(_entity);
-	if (m_obj)
+	static_components.push_back(_component);
+}
+//TODO: complete component and actor destruction. fix component structure. maybe remove component references from level?
+void Level::markComponentForDestruction(OG::ActorComponent* _component)
+{
+	components_to_destroy.push_back(_component);
+}
+
+void Level::initLevel() {
+	initComponents();
+}
+
+void Level::initComponents() {
+	for (auto & component : components_to_initialize)
 	{
-		if (m_obj->getBodyDef()->type == b2_staticBody)
-		{
-			m_obj->createCollider(m_obj->getBodyDef(), m_obj->getFixtureyDef(), getPhysicsEnvironment());
-			addStaticEntity(m_obj);
-		}
+		component->registerComponent();
+
+		if (component->should_update)
+			dynamic_components.push_back(component);
 		else
-		{
-			addDynamicEntity(m_obj);
-		}
-		return;
+			static_components.push_back(component);
 	}
 
-	VisualObject* v_obj = dynamic_cast<VisualObject*>(_entity);
-	if (v_obj)
-	{
-		addStaticEntity(v_obj);
-		return;
-	}
+	components_to_initialize.clear();
 
-	immaterial_entities.push_back(_entity);
+	game_instance->sg_needs_update = true;
 }
 
-void Level::addStaticEntity( VisualObject* _entity)
-{
-	_entity->createRenderTask(game_instance->getRenderer());
-	static_entities.push_back(_entity);
-
-}
-void Level::addDynamicEntity( MaterialObject* _entity)
-{
-	_entity->createCollider(_entity->getBodyDef(), _entity->getFixtureyDef(), getPhysicsEnvironment());
-	_entity->createRenderTask(game_instance->getRenderer());
-	dynamic_entities.push_back(_entity);
-}
-
-void Level::loadStaticMesh(std::string _file)
+void Level::destroyComponents()
 {
 
 }
-void Level::addStaticMesh(class StaticMesh* _mesh)
+
+
+void Level::beginPlay() {
+
+}
+std::vector<OG::Actor*>* Level::getActors()
 {
-	static_meshes.push_back(_mesh);
+	return &actors;
+}
+
+std::vector<OG::ActorComponent*>* Level::getDynamicComponents()
+{
+	return &dynamic_components;
+}
+std::vector<OG::ActorComponent*>* Level::getStaticComponents()
+{
+	return &static_components;
 }
 
 void Level::createPhysicsEnvironment(glm::vec2 _gravity)
@@ -95,4 +90,9 @@ void Level::createPhysicsEnvironment(glm::vec2 _gravity)
 	physics_environment = new b2World(b2Vec2(_gravity));
 }
 
-
+void Level::addActor(OG::Actor* _actor, const glm::mat4 & _transform)
+{
+	_actor->setTransform(_transform);
+	actors.push_back(_actor);
+	game_instance->sg_needs_update = true;
+}

@@ -1,6 +1,5 @@
 #include "VulkanRenderer.h"
 #include "GameState.h"
-#include "PhysicalObject.h"
 #include "StaticMesh.h"
 #include "VkRenderTask.h"
 

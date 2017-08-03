@@ -1,16 +1,4 @@
-#include "VulkanRenderer.h"
-#include "GameState.h"
-#include "PhysicalObject.h"
-#include "StaticMesh.h"
-#include "PlaneMesh.h"
-#include "Box2D.h"
-#include "SpaceshipFighter.h"
-#include "Player.h"
-#include "PlayerController.h"
-#include "VkRenderTask.h"
 #include "OGameInstance.h"
-
-#include <GLFW/glfw3.h>
 
 int main() {
 	OGameInstance OGame;

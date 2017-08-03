@@ -8,6 +8,7 @@ public:
 	SILevelOne(class GameInstance* _game_instance);
 	~SILevelOne();
 
+	void setupLevel();
 
 private:
 

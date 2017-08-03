@@ -9,6 +9,11 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
+
+namespace OG{
+	class Pawn;
+}
+
 class PlayerController
 {
 public:
@@ -16,8 +21,8 @@ public:
 	PlayerController(GLFWwindow* _window);
 	~PlayerController();
 
-	void Possess(class Pawn*);
-	bool removePawn(class Pawn*);
+	void Possess( OG::Pawn*);
+	bool removePawn(OG::Pawn*);
 
 	static void keyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
@@ -25,7 +30,7 @@ private:
 
 	GLFWwindow* window;
 
-	std::vector<class Pawn*> controlled_pawns;
+	std::vector< OG::Pawn*> controlled_pawns;
 
 };
 

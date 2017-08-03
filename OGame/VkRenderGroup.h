@@ -15,7 +15,6 @@
 
 #include "VulkanRenderer.h"
 
-#include "PhysicalObject.h"
 
 
 class VkRenderGroup
@@ -39,6 +38,6 @@ private:
 
 	VulkanRenderer* renderer;
 
-	std::vector<PhysicalObject*> objects;
+	//std::vector<PhysicalObject*> objects;
 };
 

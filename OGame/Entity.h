@@ -1,15 +1,26 @@
 #pragma once
-class Entity
-{
-public:
-	Entity();
-	virtual ~Entity();
 
-	virtual void update() = 0;
+#ifndef ENTITY_H
+#define ENTITY_H
 
-private:
+class GameInstance;
+class Level;
 
-	class GameInstance* game_instance;
+namespace OG {
+	class Entity
+	{
+	public:
+		Entity();
+		virtual ~Entity() = 0;
 
-};
+		Level* getLevel();
+		GameInstance* getGameInstance();
 
+	protected:
+		virtual void update(float delta_time) = 0;
+
+		GameInstance* game_instance;
+	};
+}
+
+#endif // !ENTITY_H

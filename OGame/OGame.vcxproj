@@ -147,6 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="ActorComponent.cpp" />
+    <ClCompile Include="b2RayCastCallbackClosestHit.cpp" />
+    <ClCompile Include="b2RayCastCallbackHit.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameInstance.cpp" />
@@ -154,47 +158,51 @@
     <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MaterialObject.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshComponent.cpp" />
     <ClCompile Include="OGameInstance.cpp" />
     <ClCompile Include="Pawn.cpp" />
-    <ClCompile Include="PhysicalObject.cpp" />
+    <ClCompile Include="PhysicalComponent.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="PlaneMesh.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerController.cpp" />
-    <ClCompile Include="PresentObject.cpp" />
     <ClCompile Include="SILevelOne.cpp" />
     <ClCompile Include="SpaceshipFighter.cpp" />
-    <ClCompile Include="SpatialObject.cpp" />
+    <ClCompile Include="SpatialComponent.cpp" />
     <ClCompile Include="StaticMesh.cpp" />
-    <ClCompile Include="VisualObject.cpp" />
+    <ClCompile Include="StaticMeshActor.cpp" />
+    <ClCompile Include="StaticMeshComponent.cpp" />
     <ClCompile Include="VkRenderTask.cpp" />
     <ClCompile Include="VkRenderGroup.cpp" />
     <ClCompile Include="VulkanRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="ActorComponent.h" />
+    <ClInclude Include="b2RayCastCallbackClosestHit.h" />
+    <ClInclude Include="b2RayCastCallbackHit.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameInstance.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="InputComponent.h" />
     <ClInclude Include="Level.h" />
-    <ClInclude Include="MaterialObject.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshComponent.h" />
     <ClInclude Include="OGameInstance.h" />
     <ClInclude Include="Pawn.h" />
-    <ClInclude Include="PhysicalObject.h" />
+    <ClInclude Include="PhysicalComponent.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PlaneMesh.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerController.h" />
-    <ClInclude Include="PresentObject.h" />
     <ClInclude Include="SILevelOne.h" />
     <ClInclude Include="SpaceshipFighter.h" />
-    <ClInclude Include="SpatialObject.h" />
+    <ClInclude Include="SpatialComponent.h" />
     <ClInclude Include="StaticMesh.h" />
-    <ClInclude Include="VisualObject.h" />
+    <ClInclude Include="StaticMeshActor.h" />
+    <ClInclude Include="StaticMeshComponent.h" />
     <ClInclude Include="VkRenderTask.h" />
     <ClInclude Include="VkRenderGroup.h" />
     <ClInclude Include="VulkanRenderer.h" />
