@@ -1,7 +1,7 @@
-#include "VulkanRenderer.h"
-#include "GameState.h"
-#include "StaticMesh.h"
-#include "VkRenderTask.h"
+#include "Ogame/Rendering/VulkanRenderer.h"
+#include "Ogame/Game/GameState.h"
+#include "Ogame/Mesh/StaticMesh.h"
+#include "Ogame/Rendering/VkRenderTask.h"
 
 //
 //VulkanRenderer::VulkanRenderer()

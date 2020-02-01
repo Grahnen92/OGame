@@ -4,7 +4,7 @@
 #define SPATIALCOMPONENT_H
 
 
-#include "ActorComponent.h"
+#include "Ogame/Entity/ActorComponent.h"
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE

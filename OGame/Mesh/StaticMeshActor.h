@@ -3,7 +3,7 @@
 #ifndef STATICMESHACTOR_H
 #define STATICMESHACTOR_H
 
-#include "Actor.h"
+#include "Ogame/Entity/Actor.h"
 
 namespace OG {
 	class MeshComponent;

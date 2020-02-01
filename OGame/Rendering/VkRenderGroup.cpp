@@ -1,5 +1,5 @@
 #include "VkRenderGroup.h"
-#include "StaticMesh.h"
+#include "Ogame/Mesh/StaticMesh.h"
 
 
 VkRenderGroup::VkRenderGroup()

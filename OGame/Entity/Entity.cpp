@@ -1,6 +1,6 @@
 #include "Entity.h"
-#include "Level.h"
-#include "GameInstance.h"
+#include "Ogame/Game/Level.h"
+#include "Ogame/Game/GameInstance.h"
 
 OG::Entity::Entity()
 {

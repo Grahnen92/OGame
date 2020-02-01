@@ -3,7 +3,7 @@
 #ifndef SPACESHIPFIGHTER_H
 #define SPACESHIPFIGHTER_H
 
-#include "Pawn.h"
+#include "OGame/Game/Pawn.h"
 
 class b2RayCastCallbackClosestHit;
 

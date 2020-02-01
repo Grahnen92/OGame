@@ -1,12 +1,12 @@
 #include "SpaceshipFighter.h"
 #include <iostream>
-#include "MeshComponent.h"
-#include "InputComponent.h"
+#include "Ogame/Mesh/MeshComponent.h"
+#include "Ogame/Game/InputComponent.h"
 #include <GLFW/glfw3.h>
-#include "Level.h"
+#include "Ogame/Game/Level.h"
 #include "b2RaycastCallbackClosestHit.h"
 
-#include "StaticMeshActor.h"
+#include "Ogame/Mesh/StaticMeshActor.h"
 
 #include <math.h>
 
@@ -22,7 +22,7 @@ SpaceshipFighter::SpaceshipFighter(GameInstance* _gi) : Pawn(_gi)
 	root_component = mesh;
 
 	mesh->setStaticMesh(0);
-	mesh->getBodyDef()->type = b2_dynamicBody;
+	mesh->getBodyDef()->type = b2_dynamicBody; 
 	mesh->getBodyDef()->position.Set(0.0f, 0.f);
 	mesh->getBodyDef()->allowSleep = false;
 	//bodyDef.gravityScale = 0.f;
@@ -104,7 +104,7 @@ void SpaceshipFighter::shoot( )
 
 	glm::mat4 bullet_transform;
 	bullet_transform = *root_component->getTransformM();
-	bullet_transform = glm::translate(bullet_transform, glm::vec3(0.f, 1.f, 0.f));
+	bullet_transform = glm::translate(bullet_transform, glm::vec3(0.f, 1.5f, 0.f));
 	bullet_transform = glm::scale(bullet_transform, glm::vec3(0.1f, 0.1f, 0.1f));
 
 	StaticMeshActor* bullet = getLevel()->spawnActor<StaticMeshActor>(bullet_transform);
@@ -112,8 +112,19 @@ void SpaceshipFighter::shoot( )
 	
 
 	OG::MeshComponent*  bullet_mesh = bullet->findFirstComponentOfClass<OG::MeshComponent>();
+	bullet_mesh->registerComponent();
+	
 	bullet_mesh->getBodyDef()->type = b2_dynamicBody;
-	//bullet->setTransform()
+	bullet_mesh->getBodyDef()->position.Set(0.0f, 0.f);
+	bullet_mesh->getBodyDef()->allowSleep = false;
+	bullet_mesh->getBodyDef()->linearDamping = 0.f;
+	bullet_mesh->getBodyShape()->SetAsBox(1.0f, 1.0);
+	bullet_mesh->getFixtureyDef()->shape = mesh->getBodyShape();
+	bullet_mesh->getFixtureyDef()->density = 10.0f;
+	bullet_mesh->getFixtureyDef()->friction = 0.3f;
+	bullet_mesh->getFixtureyDef()->restitution = 0.2f;
+
+	bullet_mesh->getCollider()->ApplyLinearImpulseToCenter(b2Vec2(0.f, 1000000.f), true);
 }
 
 void SpaceshipFighter::controlMovement(float delta_time) 

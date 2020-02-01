@@ -1,8 +1,8 @@
 #include "MeshComponent.h"
-#include "VkRenderTask.h"
+#include "Ogame/Rendering/VkRenderTask.h"
 #include "StaticMesh.h"
-#include "Actor.h"
-#include "GameInstance.h"
+#include "Ogame/Entity/Actor.h"
+#include "Ogame/Game/GameInstance.h"
 
 
 OG::MeshComponent::MeshComponent() : mesh_adress(-1), task(nullptr)

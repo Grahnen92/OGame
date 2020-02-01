@@ -1,6 +1,6 @@
-#include "OGameInstance.h"
-#include "SILevelOne.h"
-#include "PlaneMesh.h"
+#include "Ogame/OGame/OGameInstance.h"
+#include "Ogame/OGame/SILevelOne.h"
+#include "Ogame/Mesh/PlaneMesh.h"
 
 
 OGameInstance::OGameInstance()

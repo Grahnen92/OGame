@@ -1,7 +1,7 @@
 #include "Level.h"
 #include "GameInstance.h"
-#include "ActorComponent.h"
-#include "Actor.h"
+#include "Ogame/Entity/ActorComponent.h"
+#include "Ogame/Entity/Actor.h"
 #include "Box2D.h"
 
 #include <iostream>

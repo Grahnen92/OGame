@@ -4,7 +4,7 @@
 #define PHYSICALCOMPONENT_H
 
 
-#include "SpatialComponent.h"
+#include "OGame/Entity/SpatialComponent.h"
 #include "Box2D.h"
 
 namespace OG {

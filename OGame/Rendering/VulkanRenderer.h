@@ -28,9 +28,7 @@
 
 #include <chrono>
 
-#include "Camera.h"
-
-
+#include "Ogame/Game/Camera.h"
 
 struct QueueFamilyIndices {
 	int graphicsFamily = -1;

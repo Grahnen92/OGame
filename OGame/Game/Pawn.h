@@ -3,7 +3,7 @@
 #ifndef PAWN_H
 #define PAWN_H
 
-#include "Actor.h"
+#include "Ogame/Entity/Actor.h"
 
 class PlayerController;
 class InputComponent;

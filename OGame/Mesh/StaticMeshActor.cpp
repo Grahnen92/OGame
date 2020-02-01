@@ -1,5 +1,5 @@
 #include "StaticMeshActor.h"
-#include "Level.h"
+#include "Ogame/Game/Level.h"
 #include "MeshComponent.h"
 
 StaticMeshActor::StaticMeshActor()
@@ -8,7 +8,6 @@ StaticMeshActor::StaticMeshActor()
 
 StaticMeshActor::StaticMeshActor(GameInstance* _gi) : Actor(_gi)
 {
-
 	mesh = createDefaultComponent<OG::MeshComponent>();
 	root_component = mesh;
 
@@ -21,8 +20,6 @@ StaticMeshActor::StaticMeshActor(GameInstance* _gi) : Actor(_gi)
 	mesh->getFixtureyDef()->friction = 0.f;
 	mesh->getFixtureyDef()->restitution = 0.f;
 	mesh->setScale(glm::vec3(1.f, 1.f, 1.f));
-
-
 }
 
 

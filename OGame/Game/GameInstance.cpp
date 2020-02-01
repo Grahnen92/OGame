@@ -1,16 +1,16 @@
 #include "GameInstance.h"
 
-#include "VulkanRenderer.h"
-#include "VkRenderTask.h"
-#include "StaticMesh.h"
+#include "Ogame/Rendering/VulkanRenderer.h"
+#include "Ogame/Rendering/VkRenderTask.h"
+#include "Ogame/Mesh/StaticMesh.h"
 
-#include "Player.h"
+#include "Ogame/Game/Player.h"
 
-#include "Level.h"
-#include "GameState.h"
+#include "Ogame/Game/Level.h"
+#include "Ogame/Game/GameState.h"
 
-#include "Actor.h"
-#include "MeshComponent.h"
+#include "Ogame/Entity/Actor.h"
+#include "Ogame/Mesh/MeshComponent.h"
 
 
 

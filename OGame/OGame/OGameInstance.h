@@ -4,7 +4,7 @@
 
 
 
-#include "GameInstance.h"
+#include "Ogame/Game/GameInstance.h"
 class OGameInstance : public GameInstance
 {
 public:

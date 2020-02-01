@@ -1,6 +1,6 @@
 #include "PhysicalComponent.h"
-#include "Actor.h"
-#include "Level.h"
+#include "OGame/Entity/Actor.h"
+#include "Ogame/Game/Level.h"
 #include <iostream>
 
 OG::PhysicalComponent::PhysicalComponent()

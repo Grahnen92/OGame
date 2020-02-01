@@ -1,8 +1,8 @@
 #include "Actor.h"
-#include "GameInstance.h"
-#include "Level.h"
-#include "GameInstance.h"
-#include "SpatialComponent.h"
+#include "Ogame/Game/GameInstance.h"
+#include "Ogame/Game/Level.h"
+#include "Ogame/Game/GameInstance.h"
+#include "Ogame/Entity/SpatialComponent.h"
 
 #include <algorithm>
 

@@ -1,13 +1,13 @@
 #include "SILevelOne.h"
 //#include "Pawn.h"
 #include "SpaceshipFighter.h"
-#include "StaticMeshActor.h"
+#include "Ogame/Mesh/StaticMeshActor.h"
 
-#include "VulkanRenderer.h"
+#include "Ogame/Rendering/VulkanRenderer.h"
 
-#include "Player.h"
+#include "Ogame/Game/Player.h"
 //#include "Level.h"
-#include "GameInstance.h"
+#include "Ogame/Game/GameInstance.h"
 
 SILevelOne::SILevelOne()
 {

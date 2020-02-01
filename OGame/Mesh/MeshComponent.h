@@ -4,7 +4,7 @@
 #define MESHCOMPONENT_H
 
 
-#include "PhysicalComponent.h"
+#include "OGame/Physics/PhysicalComponent.h"
 
 class VulkanRenderer;
 class VkRenderTask;
