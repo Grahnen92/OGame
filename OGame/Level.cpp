@@ -87,7 +87,7 @@ std::vector<OG::ActorComponent*>* Level::getStaticComponents()
 
 void Level::createPhysicsEnvironment(glm::vec2 _gravity)
 {
-	physics_environment = new b2World(b2Vec2(_gravity));
+	physics_environment = new b2World(b2Vec2(_gravity.x, _gravity.y));
 }
 
 void Level::addActor(OG::Actor* _actor, const glm::mat4 & _transform)

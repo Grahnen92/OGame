@@ -23,6 +23,7 @@ void OGameInstance::createGame()
 	createPlayer();
 
 }
+
 void OGameInstance::createLevels()
 {
 	PlaneMesh* plane_mesh = new PlaneMesh(glm::vec2(1.f, 1.f), getRenderer());

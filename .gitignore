@@ -291,3 +291,9 @@ __pycache__/
 #include and lib dirs
 includes/
 libs/
+include/
+lib/
+Box2D/
+
+#shader files
+*.spv

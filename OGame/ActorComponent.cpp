@@ -25,7 +25,7 @@ void OG::ActorComponent::registerComponent()
 void OG::ActorComponent::destroy()
 {
 	owner->removeComponent(this);
-	owner->getLevel()
+	owner->getLevel();
 }
 
 void OG::ActorComponent::update()

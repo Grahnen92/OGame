@@ -118,7 +118,8 @@ void SpaceshipFighter::shoot( )
 
 void SpaceshipFighter::controlMovement(float delta_time) 
 {
-	b2Vec2 error_vec = b2Vec2(movement_pid.target*movement_dir) - mesh->getCollider()->GetLinearVelocity();
+	glm::vec2 dunnoWhatToCallThisVec = movement_pid.target * movement_dir;
+	b2Vec2 error_vec = b2Vec2(dunnoWhatToCallThisVec.x, dunnoWhatToCallThisVec.y) - mesh->getCollider()->GetLinearVelocity();
 	movement_pid.error.x = error_vec.x; movement_pid.error.y = error_vec.y;
 
 	movement_pid.integral = movement_pid.integral + movement_pid.error * delta_time;

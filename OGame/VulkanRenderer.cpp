@@ -1226,7 +1226,6 @@ void VulkanRenderer::updateUniformBuffer() {
 	//ubo.proj[1][1] *= -1;
 	//ubo.proj = *active_camera->getPerspectiveM();
 
-	
 	vpUniformBufferObject ubo = {};
 	
 	ubo.viewProj = (*active_camera->getPerspectiveM()) *(*active_camera->getTransformM());
