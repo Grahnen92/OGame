@@ -1,7 +1,7 @@
 #include "GameInstance.h"
 
 #include "Ogame/Rendering/VulkanRenderer.h"
-#include "Ogame/Rendering/VkRenderTask.h"
+#include "Ogame/Rendering/ModelRenderObject.h"
 #include "Ogame/Mesh/StaticMesh.h"
 
 #include "Ogame/Game/Player.h"
@@ -51,20 +51,20 @@ void GameInstance::initGame()
 
 void GameInstance::updateSceneGraph()
 {
-	std::vector<VkRenderTask*> render_tasks;
+	std::vector<ModelRenderObject*> modelRenderObjects;
 	for (auto & object : *level->getDynamicComponents())
 	{
 		object->update();
-		render_tasks.push_back(dynamic_cast<OG::MeshComponent*>(object)->getTask());
+		modelRenderObjects.push_back(dynamic_cast<OG::MeshComponent*>(object)->getModelRenderObject());
 	}
 
 	for (auto & object : *level->getStaticComponents())
 	{
 		object->update();
-		render_tasks.push_back(dynamic_cast<OG::MeshComponent*>(object)->getTask());
+		modelRenderObjects.push_back(dynamic_cast<OG::MeshComponent*>(object)->getModelRenderObject());
 	}
 
-	renderer->recordCommandBuffer(render_tasks);
+	renderer->recordCommandBuffer(modelRenderObjects);
 	sg_needs_update = false;
 }
 

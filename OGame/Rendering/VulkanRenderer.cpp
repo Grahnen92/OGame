@@ -1,7 +1,7 @@
 #include "Ogame/Rendering/VulkanRenderer.h"
 #include "Ogame/Game/GameState.h"
 #include "Ogame/Mesh/StaticMesh.h"
-#include "Ogame/Rendering/VkRenderTask.h"
+#include "Ogame/Rendering/ModelRenderObject.h"
 
 //
 //VulkanRenderer::VulkanRenderer()
@@ -1237,7 +1237,7 @@ void VulkanRenderer::updateUniformBuffer() {
 
 }
 
-void VulkanRenderer::recordCommandBuffer(std::vector<VkRenderTask*>& renderObjects)
+void VulkanRenderer::recordCommandBuffer(std::vector<ModelRenderObject*>& renderObjects)
 {
 	for (size_t i = 0; i < commandBuffers.size(); i++) {
 		VkCommandBufferBeginInfo beginInfo = {};

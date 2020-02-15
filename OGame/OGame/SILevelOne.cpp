@@ -2,6 +2,7 @@
 //#include "Pawn.h"
 #include "SpaceshipFighter.h"
 #include "Ogame/Mesh/StaticMeshActor.h"
+#include "Ogame/Mesh/MeshComponent.h"
 
 #include "Ogame/Rendering/VulkanRenderer.h"
 
@@ -29,12 +30,10 @@ void SILevelOne::setupLevel()
 {
 	createPhysicsEnvironment(glm::vec2(0.f,-10.f));
 
-	////SpaceshipFighter* space_fighter = new SpaceshipFighter(_game_instance);
 	glm::mat4 sf_transform(1.0);
 	sf_transform = glm::translate(sf_transform, glm::vec3(0.f, 1.f, 0.f));
 	SpaceshipFighter* sf = spawnActor<SpaceshipFighter>(sf_transform);
-
-	////addSpatialEntity<SpatialObject>();
+	sf->mesh->setStaticMesh(0);
 
 	Player* player_one = game_instance->getPlayer(0);
 	player_one->getController()->Possess(sf);
@@ -54,6 +53,12 @@ void SILevelOne::setupLevel()
 	lw_transform = glm::translate(lw_transform, glm::vec3(-11.f, 0.f, 0.f));
 	lw_transform = glm::scale(lw_transform, glm::vec3(1.f, 5.f, 1.f));
 	StaticMeshActor* left_wall = spawnActor<StaticMeshActor>(lw_transform);
+
+	glm::mat4 sphere_transform(1.0);
+	lw_transform = glm::translate(sphere_transform, glm::vec3(-11.f, 2.f, 0.f));
+	lw_transform = glm::scale(sphere_transform, glm::vec3(10.f, 10.f, 10.f));
+	StaticMeshActor* sphere = spawnActor<StaticMeshActor>(sphere_transform);
+	sphere->mesh->setStaticMesh(1);
 
 	//// Prepare for simulation. Typically we use a time step of 1/60 of a
 	//// second (60Hz) and 10 iterations. This provides a high quality simulation

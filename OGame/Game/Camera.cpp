@@ -159,6 +159,10 @@ void Camera::update()
 
 void Camera::fpsCamera(GLFWwindow* _window, double _dT)
 {
+	int focused = glfwGetWindowAttrib(_window, GLFW_FOCUSED);
+	if (focused < 1)
+		return;
+
 	double X, Y, dX, dY;
 	glfwGetCursorPos(_window, &X, &Y);
 

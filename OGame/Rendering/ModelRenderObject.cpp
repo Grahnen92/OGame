@@ -1,14 +1,14 @@
-#include "VkRenderTask.h"
+#include "ModelRenderObject.h"
 
 
 
-VkRenderTask::VkRenderTask()
+ModelRenderObject::ModelRenderObject()
 {
 	
 
 }
 
-VkRenderTask::VkRenderTask(VulkanRenderer* _renderer)
+ModelRenderObject::ModelRenderObject(VulkanRenderer* _renderer)
 {
 	renderer = _renderer;
 	createUniformBuffer();
@@ -16,18 +16,18 @@ VkRenderTask::VkRenderTask(VulkanRenderer* _renderer)
 	
 }
 
-VkRenderTask::~VkRenderTask()
+ModelRenderObject::~ModelRenderObject()
 {
 	if(renderer)
 		cleanup();
 }
 
-VkDescriptorSet* VkRenderTask::getDescriptorSet()
+VkDescriptorSet* ModelRenderObject::getDescriptorSet()
 {
 	return &descriptorSet;
 }
 
-void VkRenderTask::createDescriptorSet()
+void ModelRenderObject::createDescriptorSet()
 {
 	VkDescriptorSetLayout layouts[] = { *renderer->getmDescriptorSetLayout() };
 	VkDescriptorSetAllocateInfo allocInfo = {};
@@ -58,12 +58,12 @@ void VkRenderTask::createDescriptorSet()
 
 	vkUpdateDescriptorSets(*renderer->getDevice(), 1, &descriptorWrite, 0, nullptr);
 }
-void VkRenderTask::createUniformBuffer() {
+void ModelRenderObject::createUniformBuffer() {
 	VkDeviceSize bufferSize = sizeof(mUniformBufferObject);
 	renderer->createBuffer(bufferSize, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, uniformBuffer, uniformBufferMemory);
 }
 
-void VkRenderTask::updateUniformBuffer(const glm::mat4& _model_transform) {
+void ModelRenderObject::updateUniformBuffer(const glm::mat4& _model_transform) {
 	mUniformBufferObject ubo = {};
 
 	ubo.model = _model_transform;
@@ -74,17 +74,17 @@ void VkRenderTask::updateUniformBuffer(const glm::mat4& _model_transform) {
 	vkUnmapMemory(*renderer->getDevice(), uniformBufferMemory);
 }
 
-StaticMesh* VkRenderTask::getMesh()
+StaticMesh* ModelRenderObject::getMesh()
 {
 	return mesh;
 }
 
-void VkRenderTask::setMesh(class StaticMesh* _mesh)
+void ModelRenderObject::setMesh(class StaticMesh* _mesh)
 {
 	mesh = _mesh;
 }
 
-void VkRenderTask::cleanup()
+void ModelRenderObject::cleanup()
 {
 	vkDestroyBuffer(*renderer->getDevice(), uniformBuffer, nullptr);
 	vkFreeMemory(*renderer->getDevice(), uniformBufferMemory, nullptr);

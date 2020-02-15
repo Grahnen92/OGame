@@ -1,7 +1,6 @@
 #include "PlaneMesh.h"
 
 
-
 PlaneMesh::PlaneMesh()
 {
 }

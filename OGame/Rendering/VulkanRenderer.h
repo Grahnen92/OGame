@@ -154,7 +154,7 @@ public:
 	void updateCamera(class GameState* state);
 	void updateUniformBuffer();
 	void drawFrame();
-	void recordCommandBuffer(std::vector<class VkRenderTask*>& renderObjects);
+	void recordCommandBuffer(std::vector<class ModelRenderObject*>& renderObjects);
 
 
 private:

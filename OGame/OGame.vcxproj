@@ -210,8 +210,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh\Mesh.cpp" />
     <ClCompile Include="Mesh\MeshComponent.cpp" />
-    <ClCompile Include="Mesh\Plane.cpp" />
     <ClCompile Include="Mesh\PlaneMesh.cpp" />
+    <ClCompile Include="Mesh\SphereMesh.cpp" />
     <ClCompile Include="Mesh\StaticMesh.cpp" />
     <ClCompile Include="Mesh\StaticMeshActor.cpp" />
     <ClCompile Include="Mesh\StaticMeshComponent.cpp" />
@@ -219,8 +219,8 @@
     <ClCompile Include="OGame\SILevelOne.cpp" />
     <ClCompile Include="OGame\SpaceshipFighter.cpp" />
     <ClCompile Include="Physics\PhysicalComponent.cpp" />
+    <ClCompile Include="Rendering\ModelRenderObject.cpp" />
     <ClCompile Include="Rendering\VkRenderGroup.cpp" />
-    <ClCompile Include="Rendering\VkRenderTask.cpp" />
     <ClCompile Include="Rendering\VulkanRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -287,8 +287,8 @@
     <ClInclude Include="Game\PlayerController.h" />
     <ClInclude Include="Mesh\Mesh.h" />
     <ClInclude Include="Mesh\MeshComponent.h" />
-    <ClInclude Include="Mesh\Plane.h" />
     <ClInclude Include="Mesh\PlaneMesh.h" />
+    <ClInclude Include="Mesh\SphereMesh.h" />
     <ClInclude Include="Mesh\StaticMesh.h" />
     <ClInclude Include="Mesh\StaticMeshActor.h" />
     <ClInclude Include="Mesh\StaticMeshComponent.h" />
@@ -296,8 +296,8 @@
     <ClInclude Include="OGame\SILevelOne.h" />
     <ClInclude Include="OGame\SpaceshipFighter.h" />
     <ClInclude Include="Physics\PhysicalComponent.h" />
+    <ClInclude Include="Rendering\ModelRenderObject.h" />
     <ClInclude Include="Rendering\VkRenderGroup.h" />
-    <ClInclude Include="Rendering\VkRenderTask.h" />
     <ClInclude Include="Rendering\VulkanRenderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

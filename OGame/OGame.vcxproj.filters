@@ -49,7 +49,6 @@
     <ClCompile Include="..\Box2D\Collision\Shapes\b2EdgeShape.cpp" />
     <ClCompile Include="..\Box2D\Collision\Shapes\b2PolygonShape.cpp" />
     <ClCompile Include="Rendering\VkRenderGroup.cpp" />
-    <ClCompile Include="Rendering\VkRenderTask.cpp" />
     <ClCompile Include="Rendering\VulkanRenderer.cpp" />
     <ClCompile Include="Game\GameInstance.cpp" />
     <ClCompile Include="Game\GameState.cpp" />
@@ -71,11 +70,12 @@
     <ClCompile Include="Mesh\StaticMesh.cpp" />
     <ClCompile Include="Mesh\StaticMeshActor.cpp" />
     <ClCompile Include="Mesh\StaticMeshComponent.cpp" />
-    <ClCompile Include="Mesh\Plane.cpp" />
     <ClCompile Include="Physics\PhysicalComponent.cpp" />
     <ClCompile Include="Entity\SpatialComponent.cpp" />
     <ClCompile Include="..\Box2D\b2RayCastCallbackClosestHit.cpp" />
     <ClCompile Include="..\Box2D\b2RayCastCallbackHit.cpp" />
+    <ClCompile Include="Rendering\ModelRenderObject.cpp" />
+    <ClCompile Include="Mesh\SphereMesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Box2D\Box2D.h" />
@@ -126,7 +126,6 @@
     <ClInclude Include="..\Box2D\Collision\Shapes\b2PolygonShape.h" />
     <ClInclude Include="..\Box2D\Collision\Shapes\b2Shape.h" />
     <ClInclude Include="Rendering\VkRenderGroup.h" />
-    <ClInclude Include="Rendering\VkRenderTask.h" />
     <ClInclude Include="Rendering\VulkanRenderer.h" />
     <ClInclude Include="Game\GameInstance.h" />
     <ClInclude Include="Game\GameState.h" />
@@ -148,10 +147,11 @@
     <ClInclude Include="Mesh\StaticMesh.h" />
     <ClInclude Include="Mesh\StaticMeshActor.h" />
     <ClInclude Include="Mesh\StaticMeshComponent.h" />
-    <ClInclude Include="Mesh\Plane.h" />
     <ClInclude Include="Physics\PhysicalComponent.h" />
     <ClInclude Include="Entity\SpatialComponent.h" />
     <ClInclude Include="..\Box2D\b2RayCastCallbackClosestHit.h" />
     <ClInclude Include="..\Box2D\b2RayCastCallbackHit.h" />
+    <ClInclude Include="Rendering\ModelRenderObject.h" />
+    <ClInclude Include="Mesh\SphereMesh.h" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
 #include "OGame/Physics/PhysicalComponent.h"
 
 class VulkanRenderer;
-class VkRenderTask;
+class ModelRenderObject;
 class StaticMesh;
 
 namespace OG {
@@ -20,7 +20,7 @@ namespace OG {
 		virtual ~MeshComponent();
 		virtual void registerComponent();
 
-		class VkRenderTask* getTask();
+		class ModelRenderObject* getModelRenderObject();
 		void createRenderTask(VulkanRenderer* _renderer);
 		void destroyRenderTask();
 
@@ -34,7 +34,7 @@ namespace OG {
 
 		virtual void update();
 
-		VkRenderTask* task = nullptr;
+		ModelRenderObject* m_model = nullptr;
 		int mesh_adress = -1;
 
 	private:

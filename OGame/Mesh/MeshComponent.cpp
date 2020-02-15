@@ -1,11 +1,13 @@
 #include "MeshComponent.h"
-#include "Ogame/Rendering/VkRenderTask.h"
+#include "Ogame/Rendering/ModelRenderObject.h"
 #include "StaticMesh.h"
 #include "Ogame/Entity/Actor.h"
 #include "Ogame/Game/GameInstance.h"
 
 
-OG::MeshComponent::MeshComponent() : mesh_adress(-1), task(nullptr)
+OG::MeshComponent::MeshComponent() 
+	: mesh_adress(-1)
+	, m_model(nullptr)
 {
 }
 
@@ -29,8 +31,8 @@ void OG::MeshComponent::registerComponent()
 void OG::MeshComponent::createRenderTask(VulkanRenderer* _renderer)
 {
 	if (mesh_adress >= 0){
-		task = new VkRenderTask(_renderer);
-		task->setMesh(owner->getGameInstance()->getStaticMesh(mesh_adress));
+		m_model = new ModelRenderObject(_renderer);
+		m_model->setMesh(owner->getGameInstance()->getStaticMesh(mesh_adress));
 	}
 	else {
 		std::cout << "trying to create render task for meshcomponent with no assigned staticMesh";
@@ -39,15 +41,15 @@ void OG::MeshComponent::createRenderTask(VulkanRenderer* _renderer)
 
 void OG::MeshComponent::destroyRenderTask()
 {
-	if (task)
-		delete task;
+	if (m_model)
+		delete m_model;
 
-	task = nullptr;
+	m_model = nullptr;
 }
 
-class VkRenderTask* OG::MeshComponent::getTask()
+class ModelRenderObject* OG::MeshComponent::getModelRenderObject()
 {
-	return task;
+	return m_model;
 }
 
 void OG::MeshComponent::setStaticMesh(int _mesh_adress)
@@ -67,5 +69,5 @@ void OG::MeshComponent::update()
 {
 	PhysicalComponent::update();
 
-	task->updateUniformBuffer(transform);
+	m_model->updateUniformBuffer(transform);
 }

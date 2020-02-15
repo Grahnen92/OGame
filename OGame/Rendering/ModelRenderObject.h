@@ -5,12 +5,12 @@
 
 #include "VulkanRenderer.h"
 
-class VkRenderTask
+class ModelRenderObject
 {
 public:
-	VkRenderTask();
-	VkRenderTask(VulkanRenderer* _renderer);
-	~VkRenderTask();
+	ModelRenderObject();
+	ModelRenderObject(VulkanRenderer* _renderer);
+	~ModelRenderObject();
 	
 	void createDescriptorSet();
 	VkDescriptorSet* getDescriptorSet();
